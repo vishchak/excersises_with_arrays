@@ -8,22 +8,12 @@ import java.util.Scanner;
  * the array can be of arbitrary length. (When doing a task
  * additional array cannot be used)(1 hour)
  */
-public class mirrorTheArray {
+public class MirrorTheArray {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        RandomArrayCreator randomArrayCreator = new RandomArrayCreator();
 
-        int totalNumbers;
-        System.out.println("Input array's length");
-        totalNumbers = sc.nextInt();
-
-        int[] array = new int[totalNumbers];
-
-        for (int i = 0; i < totalNumbers; i++) {
-            array[i] = (int) (Math.random() * 10);
-        }
-
-        System.out.println(Arrays.toString(array));
+        int[] array = randomArrayCreator.randomArrayCreator();
 
         if (array.length % 2 == 0) {
             for (int i = 0; i < array.length / 2; i++) {
@@ -43,6 +33,8 @@ public class mirrorTheArray {
         array[i] = array[array.length - 1 - i];
         array[array.length - i - 1] = changeable;
     }
+
+
 }
 
 
